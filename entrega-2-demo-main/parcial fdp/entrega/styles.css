@@ -1,0 +1,302 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header */
+header {
+    position: relative;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.banner {
+    width: 100%;
+    height: 100px;
+    background-color: #000; /* Fondo negro */
+    position: relative;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-logo h1 {
+    font-size: 24px;
+    color: white;
+    margin-right: 20px;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+
+.user-actions a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    transition: background-color 0.3s;
+}
+
+.user-actions a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Página de Carrito */
+header {
+    width: 100%;            /* El header ocupará todo el ancho de la página */
+    padding: 0;             /* Sin padding para que la imagen ocupe todo el espacio */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;  /* Fondo blanco para el header */
+    padding: 10px 20px;
+  }
+   
+  /* Estilos del header */
+  header {
+    width: 100%;            /* El header ocupará todo el ancho de la página */
+    padding: 0;             /* Sin padding para que la imagen ocupe todo el espacio */
+  }
+  
+  /* Estilo para la imagen del banner */
+  .banner {
+    width: 100%;            /* Asegura que la imagen ocupe el 100% del ancho del header */
+    height: auto;           /* Mantiene la proporción de la imagen */
+    display: block;         /* Elimina el espacio blanco que a veces queda debajo de la imagen */
+  }
+.carrito {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #ed5a87;
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  .cart-seccion h1 {
+    color: #ed5a87;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  table input[type="number"] {
+    width: 50px;
+    padding: 5px;
+  }
+  
+  .eliminar {
+    background-color: #ed5a87;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .eliminar:hover {
+    opacity: 0.8;
+  }
+  
+  /* Total y botón de comprar */
+  .total-carrito {
+    margin-top: 20px;
+  }
+  
+  .total-carrito h3 {
+    font-size: 24px;
+  }
+  
+  #comprar {
+    background-color: #ed5a87;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #comprar:hover {
+    opacity: 0.8;
+  }
+  
+
+/* Barra de categorías */
+.category-bar {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.category-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.category-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.category-bar a:hover {
+    background-color: #555;
+}
+
+/* Banner publicitario */
+.bannerpub {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.slideshow-container img {
+    width: 80%; /* Ajusta el tamaño del banner */
+    max-height: 400px; /* Ajusta la altura máxima */
+    border-radius: 10px;
+}
+
+/* Productos */
+.promotions-slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #e91e63;
+}
+
+/* Footer */
+footer {
+    background-color: #131313;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+}
+
+/* Ajustes para los productos en la página */
+#contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre productos */
+    margin-top: 20px;
+}
+
+#contenedor-productos div {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Ancho de cada producto */
+    text-align: center; /* Centrar el texto */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+#contenedor-productos div:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}

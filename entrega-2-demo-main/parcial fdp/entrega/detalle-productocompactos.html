@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto - Polvos Compactos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./detalle.css">
+</head>
+<body>
+  <header>
+      <h1>Adharas Beauty</h1>
+      <img src="./img/banner.png" alt="Adharas Beauty" class="banner">
+  </header>
+  
+  <section class="producto-detalle">
+    <div class="producto-info">
+      <div class="imagen-producto">
+        <img src="./img/compactos.png" alt="Polvo compacto">
+      </div>
+      <div class="info-basica">
+        <h1>Polvos Compactos</h1>
+        <p>Empaque premium mármol negro con espejo full hd + pomo aplicador. Bastante contenido 10.5g, durará bastante tiempo. Textura suave que se adhiere por completo a la piel. Larga duración, acabado profesional, alta pigmentación y cobertura.</p>
+        <h2>Precio: $15.000</h2>
+        <button class="add-to-cart-btn">Añadir al Carrito</button>
+        <button class="buy-now-btn">Comprar Ahora</button>
+        <button class="back-to-main-btn" onclick="redirectToMain()">Volver a la Página Principal</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+      function redirectToMain() {
+          window.location.href = "index2.html"; // Asegúrate de que este enlace sea correcto
+      }
+      
+      document.querySelector(".add-to-cart-btn").addEventListener("click", function() {
+          alert("Producto añadido al carrito");
+      });
+      
+      document.querySelector(".buy-now-btn").addEventListener("click", function() {
+          alert("Redirigiendo a la compra");
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./detalle.css">
+</head>
+<body>
+  <header>
+    <h1>Adharas Beauty</h1>
+    <img src="./img/banner.png" alt="Adharasbeauty" class="banner">
+  </header>
+
+  <section class="producto-detalle">
+    <div class="producto-info">
+      <div class="imagen-producto">
+        <img id="product-image" src="" alt="Producto">
+      </div>
+      <div class="info-basica">
+        <h1 id="product-name"></h1>
+        <p id="product-description"></p>
+        <h2 id="product-price"></h2>
+        <button class="add-to-cart-btn">Añadir al Carrito</button>
+        <button class="buy-now-btn">Comprar Ahora</button>
+        <button class="back-to-main-btn" onclick="redirectToMain()">Volver a la Página Principal</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="productos-recomendados">
+    <h2>Productos Relacionados</h2>
+    <div class="relacionados-contenedor">
+      <div class="producto">
+        <img src="./img/gloss_transparente.png" alt="Gloss Mágico de Oro">
+        <h3>Gloss Mágico de Oro</h3>
+        <p>$8.000</p>
+        <button class="add-to-cart-btn">Añadir al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="./img/shimmers.png" alt="Shimmer con Aroma">
+        <h3>Shimmer con Aroma</h3>
+        <p>$12.000</p>
+        <button class="add-to-cart-btn">Añadir al Carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="detallep.js"></script>
+</body>
+</html>

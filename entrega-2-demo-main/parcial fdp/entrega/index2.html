@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adharas Beauty</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const userBtn = document.getElementById('userBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+
+            // Manejo del Login
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const email = document.getElementById('email').value;
+                    localStorage.setItem('userEmail', email);
+                    window.location.href = 'user-profile.html';
+                });
+            }
+
+            // Manejo de mostrar el nombre del usuario logueado en el botón
+            if (userBtn) {
+                const userEmail = localStorage.getItem('userEmail');
+                if (userEmail) {
+                    userBtn.textContent = 'Profile';
+                    userBtn.href = 'user-profile.html';
+                }
+            }
+
+            // Manejo del Logout
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    localStorage.removeItem('userEmail');
+                    window.location.href = 'index.html';
+                });
+            }
+
+            
+            let cart = [];
+
+            function addToCart(productName, price) {
+                const quantity = document.getElementById('quantity').value;
+                const product = {
+                    name: productName,
+                    price: parseFloat(price),
+                    quantity: parseInt(quantity)
+                };
+                cart.push(product);
+                alert(`${productName} ha sido añadido al carrito.`);
+                updateCart();
+            }
+
+            function updateCart() {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+
+            // Función para filtrar productos
+            window.filterProducts = function() {
+                const searchTerm = document.getElementById('search').value.toLowerCase();
+                const products = document.querySelectorAll('.product-item');
+
+                products.forEach(product => {
+                    const productName = product.getAttribute('data-name').toLowerCase();
+                    if (productName.includes(searchTerm)) {
+                        product.style.display = ''; // Mostrar producto
+                    } else {
+                        product.style.display = 'none'; // Ocultar producto
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+
+    </div>
+</section>
+<body>
+    <header>
+        <div class="banner">
+            <img src="./img/TINTA .jpeg" alt="Adharas Beauty Banner" class="banner-img">
+            <div class="header-content">
+                <div class="brand-logo">
+                    <h1>Adharas Beauty</h1>
+                </div>    
+                <div class="top-bar">
+                    <input type="text" id="search" placeholder="Buscar productos..." onkeyup="filterProducts()">
+                    <div class="user-actions">
+                        <a href="login.html" class="login-btn" id="loginBtn">Login</a>
+                        <a href="user-profile.html" class="profile-btn" id="profileBtn">My Profile</a>
+                        <a href="cart.html" class="cart-btn">🛒 Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="category-bar">
+        <ul>
+            <li><a href="category.html">Skincare</a></li>
+            <li><a href="category.html">Makeup</a></li>
+            <li><a href="category.html">Fragrance</a></li>
+            <li><a href="category.html">Haircare</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner rotativo publicitario -->
+    <section class="bannerpub">
+        <div class="slideshow-container">
+            <img src="./img/Screenshot 2024-10-20 144903.png" alt="Banner Publicitario">
+        </div>
+    </section>
+
+    <main>
+        <section class="promotions">
+            <h2>Nueva Colección</h2>
+            <div class="promotions-slider">
+                <!-- Productos en promoción -->
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="./img/IMAGEN8.jpeg" alt="Brocha Base Lengua de Gato">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+                    <h1><a href="detalle-productocompactos.html">Polvos compactos</a></h1> ........................
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                
+                <!-- Añadir más productos duplicando el código del producto -->
+                <div class="product-item" data-name="Polvo compacto">
+                    <img src="./img/compactos.png" alt="Polvo compacto">
+                    <p class="product-name">Polvo compacto</p>
+                    <h1><a href="detalle-productocompactos.html">Polvos compactos</a></h1>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Polvo compacto', 25.99)">Agregar al Carrito</button>
+                </div>
+                
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="./img/copamentr.png" alt="Brocha Base Lengua de Gato">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Gloss">
+                    <img src="./img/gloss transparente .png" alt="Gloss">
+                    <p class="product-name">Gloss</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                
+            </div>
+        </section>
+    </section>
+
+    <main>
+        <section class="promotions">
+            <div class="promotions-slider">
+                <!-- Productos en promoción -->
+                <div class="product-item" data-name="Iluminador líquido">
+                    <img src="./img/iluminador liquido.png" alt="Iluminador líquido">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <!-- Añadir más productos duplicando el código del producto -->
+                <div class="product-item" data-name="Borla">
+                    <img src="./img/borla.png" alt="Borla">
+                    <p class="product-name">Borla</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="./img/LIP GLOSS.jpeg" alt="Brocha Base Lengua de Gato">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Brocha contorno">
+                    <img src="./img/brocha contorno .png" alt="Brocha contorno">
+                    <p class="product-name">Brocha contorno</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+
+            </div>
+        </section>
+    </section>
+
+    <main>
+        <section class="promotions">
+            <div class="promotions-slider">
+                <!-- Productos en promoción -->
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="imagen-producto.jpg" alt="Brocha Base Lengua de Gato">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <!-- Añadir más productos duplicando el código del producto -->
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="./IMG/iluminador liquido.png" alt="Iluminador líquido">
+                    <p class="product-name">Iluminador líquido</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="./img/shimmers.png" alt="Brocha Base Lengua de Gato">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Gloss transparente">
+                    <img src="./img/gloss transparente .png" alt="Gloss transparente">
+                    <p class="product-name">Gloss transparente</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <main>
+        <section class="promotions">
+            <div class="promotions-slider">
+                <!-- Productos en promoción -->
+                <div class="product-item" data-name="Gloss magia">
+                    <img src="./img/gloss magia.png" alt="Gloss magia">
+                    <p class="product-name">Gloss magia</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <!-- Añadir más productos duplicando el código del producto -->
+                <div class="product-item" data-name="perlitas">
+                    <img src="./img/perlitas.png" alt="perlitas">
+                    <p class="product-name">perlitas</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Mantequilla">
+                    <img src="./img/mantequilla.png" alt="Mantequilla">
+                    <p class="product-name">Mantequilla corporal</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="mezclador">
+                    <img src="./img/mezclador.png" alt="mezclador">
+                    <p class="product-name">Mezclador de corazón</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <main>
+        <section class="promotions">
+            <div class="promotions-slider">
+                <!-- Productos en promoción -->
+                <div class="product-item" data-name="Sombra chocolate">
+                    <img src="./img/paleta 8.png" alt="Sombra chocolate">
+                    <p class="product-name">Sombra chocolate</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <!-- Añadir más productos duplicando el código del producto -->
+                <div class="product-item" data-name="Gloss BOOM">
+                    <img src="./img/IMAGEN1.jpeg" alt="Gloss BOOM">
+                    <p class="product-name">Gloss BOOM</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Gloss color">
+                    <img src="./img/IMAGEN2.jpeg" alt="Glos color">
+                    <p class="product-name">Gloss color</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Lib Scrubs">
+                    <img src="./img/IMAGEN3.jpeg" alt="Lib Scrubs">
+                    <p class="product-name">Lib Scrubs</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <main>
+        <section class="promotions">
+            <div class="promotions-slider">
+                <!-- Productos en promoción -->
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="./img/IMAGEN4.jpeg" alt="Brocha Base Lengua de Gato">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <!-- Añadir más productos duplicando el código del producto -->
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="./img/IMAGEN5.jpeg" alt="Brocha Base Lengua de Gato">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="./img/IMAGEN6.jpeg" alt="Brocha Base Lengua de Gato">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+                <div class="product-item" data-name="Brocha Base Lengua de Gato">
+                    <img src="./img/IMAGEN7.jpeg" alt="Brocha Base Lengua de Gato">
+                    <p class="product-name">Brocha Base Lengua de Gato</p>
+                    <div class="rating">★★★★☆</div>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-container">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brocha Base Lengua de Gato', 25.99)">Agregar al Carrito</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section class="membership">
+            <h3>¿Quieres convertirte en miembro?</h3>
+            <p>Únete a la comunidad de Adharas Beauty y desbloquea beneficios exclusivos!</p>
+            <a href="signup.html" class="btn">Conviértete en miembro ahora</a>
+        </section>
+
+        <section class="footer-links">
+            <a href="contact.html">Contáctanos</a> | 
+            <a href="terms.html">Términos y Condiciones</a> | 
+            <a href="privacy.html">Política de Privacidad</a> |
+            <a href="sobrenosotros.html">¿Quiénes somos?</a>
+        </section>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
