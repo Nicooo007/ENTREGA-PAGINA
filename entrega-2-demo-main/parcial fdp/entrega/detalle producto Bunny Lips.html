@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto - Bunny Lips</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./detalle.css">
+</head>
+<body>
+  <header>
+      <h1>Adharas Beauty</h1>
+      <img src="./img/banner.png" alt="Adharas Beauty" class="banner">
+  </header>
+  
+  <section class="producto-detalle">
+    <div class="producto-info recuadro-fucsia">
+        <div class="imagen-producto">
+            <!-- Espacio para la imagen grande del producto -->
+            <img src="./img/IMAGEN8.jpeg" alt="Producto">
+        </div>
+        <div class="info-basica">
+        <h1>Bunny Lips</h1>
+        <p>¡Los gloss nunca pasan de moda!</p>
+          <p>- Gloss de labios que te hidrata y repara a profundidad.</p> 
+            <p>- Contiene aceites vegetales que ayudan a mantener la humedad en tus labios.</p>
+            <p>Deja una sensación refrescante de efecto mentolado que nutre y humecta a profundidad.</p>
+            <p>- No aporta color.</p>
+            <p>- Su textura es ligera, no se siente pegajoso en los labios.</p>
+            <p>- Deja un efecto de brillo extremo.</p>
+        <h2>Precio: $15.000</h2>
+        <button class="add-to-cart-btn">Añadir al Carrito</button>
+        <button class="buy-now-btn">Comprar Ahora</button>
+        <button class="back-to-main-btn" onclick="redirectToMain()">Volver a la Página Principal</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+      function redirectToMain() {
+          window.location.href = "index2.html"; // Asegúrate de que este enlace sea correcto
+      }
+      
+      document.querySelector(".add-to-cart-btn").addEventListener("click", function() {
+          alert("Producto añadido al carrito");
+      });
+      
+      document.querySelector(".buy-now-btn").addEventListener("click", function() {
+          alert("Redirigiendo a la compra");
+      });
+  </script>
+</body>
+</html>
