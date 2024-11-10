@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adharas Beauty</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabecera con banner y navegación superior -->
+    <header>
+        <div class="banner">
+            <img src="./img/TINTA .jpeg" alt="Adharas Beauty Banner" class="banner-img">
+            <div class="header-content">
+                <div class="brand-logo">
+                    <h1>Adharas Beauty</h1>
+                </div>
+                <div class="top-bar">
+                    <input type="text" id="search" placeholder="Buscar productos..." onkeyup="filterProducts()">
+                    <div class="user-actions">
+                        <a href="login.html" class="login-btn" id="loginBtn">Login</a>
+                        <a href="user-profile.html" class="profile-btn" id="profileBtn">Mi Perfil</a>
+                        <a href="cart.html" class="cart-btn">🛒 Carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de navegación de categorías -->
+    <nav class="category-bar">
+        <ul>
+            <li><a href="category.html">Skincare</a></li>
+            <li><a href="category.html">Makeup</a></li>
+            <li><a href="category.html">Fragrance</a></li>
+            <li><a href="category.html">Haircare</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner rotativo publicitario -->
+    <section class="bannerpub">
+        <div class="slideshow-container">
+            <img id="centered-banner" src="./img/Screenshot 2024-10-20 144903.png" alt="Banner Publicitario">
+        </div>
+    </section>
+ 
+    <!-- Contenedor de productos -->
+    <section id="product-container">
+        <!-- Los productos se agregarán dinámicamente aquí desde JavaScript -->
+    </section>
+
+    <!-- Footer con enlaces adicionales -->
+    <footer>
+        <section class="membership">
+            <h3>¿Quieres convertirte en miembro?</h3>
+            <p>Únete a la comunidad de Adharas Beauty y desbloquea beneficios exclusivos!</p>
+            <a href="signup.html" class="btn">Conviértete en miembro ahora</a>
+        </section>
+
+        <section class="footer-links">
+            <a href="contact.html">Contáctanos</a> | 
+            <a href="terms.html">Términos y Condiciones</a> | 
+            <a href="privacy.html">Política de Privacidad</a> |
+            <a href="sobrenosotros.html">¿Quiénes somos?</a>
+        </section>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="datas.js"></script>
+    <script src="data.js"></script>
+    <script src="index.js"></script> <!-- Este script se encargará de mostrar los productos -->
+</body>
+</html>

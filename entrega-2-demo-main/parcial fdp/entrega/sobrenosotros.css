@@ -1,0 +1,114 @@
+/* Estilos generales para la sección */
+.sobre-nosotros {
+    max-width: 800px;           /* Limita el ancho máximo de la sección */
+    margin: 50px auto;          /* Centra la sección y añade espacio vertical */
+    padding: 20px;              /* Espacio interno para mayor legibilidad */
+    background-color: #f9f9f9;  /* Color de fondo suave */
+    border-radius: 8px;         /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para profundidad */
+}
+
+/* Título de la sección */
+.sobre-nosotros h2 {
+    font-family: 'Oswald', sans-serif; /* Fuente de encabezado moderna */
+    font-size: 2rem;                   /* Tamaño de fuente grande */
+    color: #333;                       /* Color oscuro para contraste */
+    margin-bottom: 15px;               /* Espacio inferior */
+    text-align: center;                /* Centrado del título */
+}
+
+/* Párrafos de texto */
+.sobre-nosotros p {
+    font-family: 'Arial', sans-serif;  /* Fuente básica y legible */
+    font-size: 1.1rem;                 /* Tamaño de fuente cómodo para lectura */
+    line-height: 1.6;                  /* Espacio entre líneas */
+    color: #555;                       /* Color de texto suave */
+    margin-bottom: 15px;               /* Espacio entre párrafos */
+    text-align: justify;               /* Justificación del texto */
+}
+
+/* Estilos opcionales para resaltar palabras */
+.sobre-nosotros p strong {
+    color: #d23a60;                    /* Color distintivo para resaltar palabras */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+    .sobre-nosotros {
+        padding: 15px;                 /* Reduce el padding en pantallas pequeñas */
+    }
+    .sobre-nosotros h2 {
+        font-size: 1.8rem;             /* Disminuye el tamaño del título */
+    }
+    .sobre-nosotros p {
+        font-size: 1rem;               /* Disminuye el tamaño de los párrafos */
+    }
+}
+
+/* Estilo del botón */
+#volver-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #d23a60;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#volver-btn:hover {
+    background-color: #b32e50;
+}
+
+/* --- Estilos para la sección de Perfiles de Trabajadores --- */
+.nuestro-equipo {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nuestro-equipo h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.perfil {
+    display: inline-block;
+    width: 180px;
+    margin: 15px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.perfil:hover {
+    transform: scale(1.05);
+}
+
+.perfil img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.perfil h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.perfil p {
+    font-size: 0.9em;
+    color: #555;
+}
